@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  jupyter:
+    build: .
+    image: jupyter-lab
+    container_name: jupyter-lab
+    ports:
+      - "8888:8888"
+      - "6006:6006"
+      - "8000:8000"
+    volumes:
+      - ../notebook:/notebook
+      - ./config/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+      - ./config/c-jupyter-kernel:/root/.local/share/jupyter/kernels/c
+    working_dir: /notebook
+    command: jupyter lab
+    restart: always
+    privileged: true
+
+  seq2seq-vis:
+    image: sgratzl/seq2seq-vis
+    working_dir: '/ws'
+    command: '"source activate s2sv && python3 server.py --dir /data"'
+    volumes:
+      - ../data/0316-fakedates:/data
+      # - '.:/ws'
+    ports:
+      - '8080:8080'

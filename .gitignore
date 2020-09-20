@@ -1,0 +1,14 @@
+
+# jupyterlab files
+**/.ipynb_checkpoints
+
+# python files
+__pycache__
+**/*__pycache__/
+
+# mac system files
+**/.DS_Store
+
+# data files
+notebook/seq2seq-chatbot/models/cornell_movie_dialog
+notebook/text-classification/data

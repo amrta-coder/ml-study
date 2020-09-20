@@ -1,0 +1,7 @@
+build/
+dist/
+hb_config.egg-info/
+notebooks/
+.coverage
+*.pyc
+__pycache__

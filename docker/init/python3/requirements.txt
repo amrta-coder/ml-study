@@ -1,0 +1,10 @@
+networkx
+scipy
+pgmpy
+numpy
+pandas
+wrapt
+cycler
+kiwisolver
+matplotlib
+pyparsing
